@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- 3. Mając informacje, że liczbie 1 jest przyporządkowany poniedziałek, 2 - wtorek itp. napisz program, który wczytuje liczbę i wyświetla odpowiadający jej dzień tygodnia. Jeśli użytkownik wpisze złą liczbę powinien pojawić się stosowny komunikat. Program ten powinien opierać się na instrukcji if...else. -->
+
+    <p>Podaj liczbe od 1 do 7: </p>
+
+    <form action="" method="POST">
+        <input type="number" name="liczba" placeholder="Np.3">
+        <input type="submit" value="Sprawdź">
+    </form>
+
+    <div class="wynik"></div>
+
+    <script>
+        const formularz = document.querySelector("form");
+        const div = document.querySelector(".wynik");
+
+        formularz.addEventListener("submit", (e)=> {
+            e.preventDefault();
+            const liczba = document.querySelector('input[name="liczba"]').value*1;
+
+            if(liczba==1){
+                div.textContent = `Poniedziałek`;
+            }else if(liczba==2){
+                div.textContent = `Wtorek`;
+            }else if(liczba==3){
+                div.textContent = `Środa`;
+            }else if(liczba==4){
+                div.textContent = `Czwartek`;
+            }else if(liczba==5){
+                div.textContent = `Piątek`;
+            }else if(liczba==6){
+                div.textContent = `Sobota`;
+            }
+            else if(liczba==7){
+                div.textContent = `Niedziala`;
+            }else{
+                div.textContent = `Podałeś niepoprawną liczbe !!!`
+            }
+        });
+    </script>
+</body>
+</html>

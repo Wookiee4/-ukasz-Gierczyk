@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--  Napisz program, który zapyta nas o rodzaj działania i w zależności od naszej odpowiedzi wykona dodawanie, odejmowanie, mnożenie lub dzielenie dwóch liczb. Poszczególne działania powinne być zrealizowane za pomocą funkcji. -->
+
+    <form action="" method="POST">
+        <label for=""> Podaj dwie liczby: </label>
+        <input type="number" name="a">
+        <input type="number" name="b">
+
+        <label> Wybierz co chcesz z nimi zrobić : </label></br>
+        <label>1.Dodawanie</label>
+        <label>2.Odejmowanie</label>
+        <label>3.Dzielenie</label>
+        <label>4.Mnożenie</label>
+        <input type="number" name="wybor" min="1" max="4" placeholder="Wpisz numer działania">
+
+        <input type="submit" value="Oblicz">
+    </form>
+
+    <div class="wynik"></div>
+
+    <script>
+        const formularz = document.querySelector("form");
+        const div = document.querySelector(".wynik");
+
+        function dodaj(a,b){
+            return (`Suma ${a} i ${b} wynosi ${a+b}`);
+        }
+        function odejmij(a,b){
+            return (`Różnica ${a} i ${b} wynosi ${a-b}`);
+        }
+        function podziel(a,b){
+            return (`Iloraz ${a} i ${b} wynosi ${a/b}`);
+        }
+        function pomnoz(a,b){
+            return (`Iloczyn ${a} i ${b} wynosi ${a*b}`);
+        }
+
+        formularz.addEventListener("submit", (e)=> {
+            e.preventDefault();
+            const a = document.querySelector('input[name="a"]').value*1;
+            const b = document.querySelector('input[name="b"]').value*1;
+            const wybor = document.querySelector('input[name="wybor"]').value*1;
+
+            switch(wybor){
+                case 1:{
+                    div.textContent = dodaj(a,b);
+                }break;
+                case 2:{
+                    div.textContent = odejmij(a,b);
+                }break;
+                case 3:{
+                    div.textContent = podziel(a,b);
+                }break;
+                case 4:{
+                    div.textContent = pomnoz(a,b);
+                }break;
+            }
+        });
+    </script>
+
+</body>
+</html>
