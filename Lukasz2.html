@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" method="POST">
+        <legend>Podaj 1 liczbe: </legend>
+        <input type="number" name="a">
+
+        <legend>Podaj n: </legend>
+        <input type="number" name="n">
+
+        <input type="submit" value="Pokaz">
+    </form>
+
+    <div class="wynik"></div>
+
+    <script>
+        const formularz = document.querySelector("form");
+        const div = document.querySelector('.wynik');
+
+        formularz.addEventListener("submit", (e)=> {
+            e.preventDefault();
+            var a = document.querySelector('input[name="a"]').value1;
+            var n = document.querySelector('input[name="n"]').value1;
+            var srednia = 0*1;
+
+            for(let i=a; i<=a+n; i++){
+                srednia+=i;
+            }
+
+
+
+           div.textContent = Srednia wynosi ${srednia/n} ;
+        });
+
+    </script>
+</body>
+</html>
